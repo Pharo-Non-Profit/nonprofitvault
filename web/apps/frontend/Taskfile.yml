@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  desc: "start the project (for web-development only)"
+  start:
+    cmds:
+      - npm run start:dev
+
+  buildprod:
+    desc: "build the production version of the project"
+    cmds:
+      - npm run build:prod
+      - cp -Rf ./build/* ../nonprofitvault-frontend-static
+      - rm -Rf ./build
+
+  # (Coming soon...)
+  buildqa:
+    desc: "build the quality assurance version of the project"
+    cmds:
+      - npm run build:qa
+      - cp -Rf ./build/* ../nonprofitvault-frontend-static
+      - rm -Rf ./build
